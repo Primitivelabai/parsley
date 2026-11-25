@@ -1,0 +1,70 @@
+name: Bug report
+description: Something in Parsley doesn't work as expected.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. **Please don't paste raw logs.** Windows records can contain your user name, PC name, folder paths, app names, serial numbers and network details. Reproduce with **Open the example** or `parsley demo` if you can.
+  - type: input
+    id: version
+    attributes:
+      label: Parsley version
+      description: Shown in the name of the ZIP you downloaded, for example Parsley-0.9.0-windows-x64.zip.
+      placeholder: "0.9.0"
+    validations:
+      required: true
+  - type: input
+    id: windows
+    attributes:
+      label: Windows build
+      description: Run `winver`, or `[System.Environment]::OSVersion.Version` in PowerShell.
+      placeholder: "Windows 11 24H2, build 26100.2314"
+    validations:
+      required: true
+  - type: dropdown
+    id: where
+    attributes:
+      label: Where did it happen?
+      options:
+        - Desktop app
+        - Desktop app, classic interface (--classic)
+        - Command line (parsley.exe)
+        - An exported report (HTML, CSV or JSON)
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open Parsley and choose Open the example
+        2. Go to Rewind and select the 2:14 pm restart
+        3. …
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected and what happened
+    validations:
+      required: true
+  - type: textarea
+    id: example
+    attributes:
+      label: Minimal redacted example (optional)
+      description: |
+        Only if the fictional example doesn't show the problem. Keep the fewest events that do, and replace private details with placeholders:
+        - user names → `[user]`
+        - PC or domain names → `[pc-name]`
+        - folder paths → `[path]`
+        - app or module names you'd rather not share → `[app]`
+        - serial numbers, IP addresses and ports → remove them
+      render: text
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy check
+      options:
+        - label: I've removed user names, PC names, paths, serial numbers and network details from anything above.
+          required: true

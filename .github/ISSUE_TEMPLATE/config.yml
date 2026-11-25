@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Usage guide
+    url: https://github.com/Primitivelabai/parsley/blob/HEAD/docs/USAGE.md
+    about: How to run Rewind, compare sessions, record health and export reports.
+  - name: Contributing guide
+    url: https://github.com/Primitivelabai/parsley/blob/HEAD/CONTRIBUTING.md
+    about: Set up, run the tests and try a fictional case before changing code.

@@ -1,0 +1,44 @@
+/* Parsley v2 tokens. Drop into ui/style.css :root (names match the current file where they exist). */
+:root{
+  /* ground */
+  --frame:#E9ECE6;        /* behind the window (screenshots only) */
+  --canvas:#F4F6F1;       /* main content background */
+  --panel:#FFFFFF;        /* cards */
+  --sidebar:#12301C;      /* sidebar and title bar */
+  --sidebar-ink:#EAF3E6;  /* sidebar text */
+  --sidebar-active:rgba(255,255,255,.12);
+  /* text */
+  --ink:#14201A;
+  --muted:rgba(20,32,26,.70);   /* passes 4.5:1 on white and canvas */
+  --border:rgba(20,32,26,.10);
+  /* brand */
+  --green:#2B7D39;        /* primary buttons, links */
+  --green-deep:#1D5A28;
+  --green-soft:#EAF5E5;
+  --leaf:#38A04A;         /* gauges, bars, logo */
+  --vein:#8FD47F;         /* active nav bar, accents on dark */
+  --orange:#E0792F;       /* focus ring, busy flag, bookmark */
+  /* status (chip background / text) */
+  --crit-bg:#FBE9E9; --crit:#9E2424; --crit-dot:#B42C2C;
+  --err-bg:#FDEEE4;  --err:#9A4312;  --err-dot:#E0792F;
+  --warn-bg:#FFF6DA; --warn:#7A5A00;
+  --info-bg:#EEF1EC; --info:#3F4A44;
+  /* shape */
+  --radius-card:16px; --radius-btn:10px; --radius-chip:999px; --radius-tab:8px;
+  --shadow-card:0 1px 2px rgba(20,32,26,.06),0 10px 30px rgba(20,32,26,.05);
+  --shadow-window:0 0 0 1px rgba(20,32,26,.10),0 24px 60px rgba(20,32,26,.16);
+  /* type */
+  --font:Geist,'Segoe UI Variable','Segoe UI',system-ui,sans-serif;
+  --mono:'Geist Mono',ui-monospace,Consolas,monospace;
+  /* motion */
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+@keyframes pz-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes pz-hop{0%,100%{transform:translateY(0) scale(1,1)}14%{transform:translateY(0) scale(1.1,.88)}40%{transform:translateY(-14px) scale(.94,1.08)}58%{transform:translateY(-16px)}84%{transform:translateY(0) scale(1.06,.94)}}
+@keyframes pz-ring{from{stroke-dashoffset:var(--c)}}
+@keyframes pz-pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.pz-in{animation:pz-in .5s var(--ease) both}
+.pz-hop{animation:pz-hop 1.2s var(--ease) infinite;transform-origin:50% 100%}
+.pz-ring{animation:pz-ring 1.1s var(--ease) both}
+.pz-pulse{animation:pz-pulse 1.6s ease-in-out infinite}
+@media (prefers-reduced-motion:reduce){.pz-in,.pz-hop,.pz-ring,.pz-pulse{animation:none!important}}
